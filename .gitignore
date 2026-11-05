@@ -1,0 +1,16 @@
+# Environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs (the shipped votes.jsonl is intentionally tracked as evidence)
+*.log

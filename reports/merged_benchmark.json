@@ -1,0 +1,153 @@
+{
+  "meta": {
+    "created_at": "2026-11-05T19:17:15+04:00",
+    "load_info": {
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "adapter_dir": "C:\\Users\\User\\base-vs-finetuned-panel\\adapters\\qwen25-python-tutor",
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "torch_version": "2.12.0+cpu",
+      "torch_threads": 12,
+      "tokenizer_load_s": 1.035,
+      "base_load_s": 0.388,
+      "adapter_attach_s": 0.154,
+      "total_load_s": 1.577,
+      "base_parameters": 1544259072,
+      "adapter_parameters": 544768,
+      "adapter_size_mb": 2.09,
+      "warmup_s": 11.237,
+      "merged_build_s": 1.288
+    },
+    "settings": {
+      "max_new_tokens": 128,
+      "temperature": 0.0,
+      "variants": [
+        "base",
+        "finetuned",
+        "merged"
+      ]
+    },
+    "prompts": [
+      {
+        "id": "explain",
+        "title": "1. Python izahı",
+        "domain": "in-domain",
+        "system": "Sən Azərbaycan dilində Python öyrənən yeni başlayanlara kömək edən müəllimsən. Sadə və dəqiq izah ver, lazım olanda işlək Python kodu göstər.",
+        "user": "Python-da list və tuple arasındakı fərqi yeni başlayan üçün izah et. Qısa kod nümunəsi ver."
+      },
+      {
+        "id": "quiz",
+        "title": "3. Quiz yaratma",
+        "domain": "in-domain",
+        "system": "Sən Azərbaycan dilində Python müəllimisən. İstifadəçinin seçdiyi mövzu üzrə 3 qısa suallıq quiz yarat. Cavab açarını sonda ayrıca göstər.",
+        "user": "Python siyahıları mövzusunda 3 suallıq quiz yarat və cavab açarını sonda göstər."
+      }
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "20261105-191715-35a27d",
+      "prompt_id": "explain",
+      "title": "1. Python izahı",
+      "domain": "in-domain",
+      "system": "Sən Azərbaycan dilində Python öyrənən yeni başlayanlara kömək edən müəllimsən. Sadə və dəqiq izah ver, lazım olanda işlək Python kodu göstər.",
+      "user": "Python-da list və tuple arasındakı fərqi yeni başlayan üçün izah et. Qısa kod nümunəsi ver.",
+      "results": {
+        "base": {
+          "variant": "base",
+          "text": "Pythonda `list` və `tuple` əsasında bir çox özü var. Bu özü ilə qısa kod nümunəsi verir:\n\n```python\n# List\nnumbers = [1, 2, 3]\nprint(numbers)  # Output: [1, 2, 3]\n\n# Tuple\ncoordinates = (4, 5)\nprint(coordinates)  # Output: (4, 5)\n\n# İsimlər\nnames = [\"Ali\", \"Veli\"]\nprint(names[0])  # Output: Ali\n\n# Dördün",
+          "elapsed_s": 46.18,
+          "ttft_s": null,
+          "prompt_tokens": 110,
+          "output_tokens": 129,
+          "output_chars": 305,
+          "output_words": 53,
+          "tokens_per_second": 2.793,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        },
+        "finetuned": {
+          "variant": "finetuned",
+          "text": "```python\n# Listaların əsasında:\n# 1. Dəyərlərdən ibarətdir.\n# 2. İndeksli olmayan dəyişikliklər qalır.\n# 3. Ekspektif bir dəyər olmayan dəyişikliklər qalır.\n\n# Tupleların əsasında:\n# 1. Dəyərlərdən ibarətdir.\n# 2. İndeksli olmayan dəyi",
+          "elapsed_s": 50.589,
+          "ttft_s": null,
+          "prompt_tokens": 110,
+          "output_tokens": 128,
+          "output_chars": 236,
+          "output_words": 34,
+          "tokens_per_second": 2.53,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        },
+        "merged": {
+          "variant": "merged",
+          "text": "```python\n# Listaların əsasında:\n# 1. Dəyərlərdən ibarətdir.\n# 2. İndeksli olmayan dəyişikliklər qalır.\n# 3. Ekspektif bir dəyəri artırmaq üçün eklənməz.\n\n# Tupleların əsasında:\n# 1. Dəyərlərdən ibarətdir.\n# 2. İndeksli olmayan dəyişiklikl",
+          "elapsed_s": 42.588,
+          "ttft_s": null,
+          "prompt_tokens": 110,
+          "output_tokens": 128,
+          "output_chars": 239,
+          "output_words": 34,
+          "tokens_per_second": 3.006,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        }
+      }
+    },
+    {
+      "run_id": "20261105-191934-0ea6a8",
+      "prompt_id": "quiz",
+      "title": "3. Quiz yaratma",
+      "domain": "in-domain",
+      "system": "Sən Azərbaycan dilində Python müəllimisən. İstifadəçinin seçdiyi mövzu üzrə 3 qısa suallıq quiz yarat. Cavab açarını sonda ayrıca göstər.",
+      "user": "Python siyahıları mövzusunda 3 suallıq quiz yarat və cavab açarını sonda göstər.",
+      "results": {
+        "base": {
+          "variant": "base",
+          "text": "Tabii, burada sizin istifadəçinin seçdiksiyini göstərmək üçün 3 qısa suallıq quiz yaratmağa çalışacağım:\n\n1. **Quiz 1:**\n   - Soru: \"Python'da bir fonksiyonun ne zaman çağırılır?\"\n     - A) Fonksiyon adı ile çağırılır\n     - B) Fonksiyon adı ve parametrelerle çağırılır\n     - C) Fonksiyon adı ve parametrelerle çağırılır,",
+          "elapsed_s": 39.748,
+          "ttft_s": null,
+          "prompt_tokens": 108,
+          "output_tokens": 128,
+          "output_chars": 322,
+          "output_words": 44,
+          "tokens_per_second": 3.22,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        },
+        "finetuned": {
+          "variant": "finetuned",
+          "text": "1) Python dili nədir? \n   a) Aşağıdakı bütün cümlələri təsir edin.\n      b) Cümlənin başqa bir cümləsi olub-olmadığına görə.\n      c) Cümlənin başqa bir cümləsi olmaz-olub-olmadığına görə.\n      d) Cümlənin başqa bir cümləsi olub-olmadığına görə, bu cümlənin başqa bir cüml",
+          "elapsed_s": 35.485,
+          "ttft_s": null,
+          "prompt_tokens": 108,
+          "output_tokens": 128,
+          "output_chars": 273,
+          "output_words": 36,
+          "tokens_per_second": 3.607,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        },
+        "merged": {
+          "variant": "merged",
+          "text": "1) Python dili nədir? \n   a) Aşağıdakı bütün cümlələrdən biri\n      b) Bir programlama dili\n      c) Bir tətbiq dili\n      d) Bir dillerin adıdır\n\n2) Python dili nədir?\n   a) Aşağıdakı bütün cümlələrdən biri\n      b) Bir programlama dili\n      c) Bir tətbiq dili\n      d) Bir dillerin adıdır\n\n3) Python",
+          "elapsed_s": 33.798,
+          "ttft_s": null,
+          "prompt_tokens": 108,
+          "output_tokens": 128,
+          "output_chars": 302,
+          "output_words": 44,
+          "tokens_per_second": 3.787,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "created_at": "2026-11-05T19:11:04+04:00",
+    "load_info": {
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "adapter_dir": "C:\\Users\\User\\base-vs-finetuned-panel\\adapters\\qwen25-python-tutor",
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "torch_version": "2.12.0+cpu",
+      "torch_threads": 12,
+      "tokenizer_load_s": 0.89,
+      "base_load_s": 0.49,
+      "adapter_attach_s": 0.17,
+      "total_load_s": 1.55,
+      "base_parameters": 1544259072,
+      "adapter_parameters": 544768,
+      "adapter_size_mb": 2.09,
+      "warmup_s": 10.11
+    },
+    "settings": {
+      "max_new_tokens": 128,
+      "temperature": 0.0,
+      "variants": [
+        "base",
+        "finetuned"
+      ]
+    },
+    "prompts": [
+      {
+        "id": "explain",
+        "title": "1. Python izahı",
+        "domain": "in-domain",
+        "system": "Sən Azərbaycan dilində Python öyrənən yeni başlayanlara kömək edən müəllimsən. Sadə və dəqiq izah ver, lazım olanda işlək Python kodu göstər.",
+        "user": "Python-da list və tuple arasındakı fərqi yeni başlayan üçün izah et. Qısa kod nümunəsi ver."
+      },
+      {
+        "id": "code",
+        "title": "2. Kod yazma",
+        "domain": "in-domain",
+        "system": "Sən Azərbaycan dilində Python öyrənən yeni başlayanlara kömək edən müəllimsən. Sadə və dəqiq izah ver, lazım olanda işlək Python kodu göstər.",
+        "user": "while döngüsü ilə 1-dən 5-ə qədər ədədləri çap edən Python kodu yaz və hər sətri qısa izah et."
+      },
+      {
+        "id": "quiz",
+        "title": "3. Quiz yaratma",
+        "domain": "in-domain",
+        "system": "Sən Azərbaycan dilində Python müəllimisən. İstifadəçinin seçdiyi mövzu üzrə 3 qısa suallıq quiz yarat. Cavab açarını sonda ayrıca göstər.",
+        "user": "Python siyahıları mövzusunda 3 suallıq quiz yarat və cavab açarını sonda göstər."
+      },
+      {
+        "id": "check",
+        "title": "4. Cavabı yoxlama",
+        "domain": "in-domain",
+        "system": "Sən Azərbaycan dilində Python müəllimisən. Şagirdin cavabını yoxla, düzgün və səhv hissələri qısa izah et. Səhvdirsə doğru cavabı göstər.",
+        "user": "Cavabımı yoxla: `[3, 7, 8][1]` nəticəsi 8-dir. Düzdür?"
+      },
+      {
+        "id": "hard",
+        "title": "5. Çətin / domen xarici",
+        "domain": "out-of-domain",
+        "system": "Sən dəqiq və qısa cavab verən köməkçisən.",
+        "user": "Bir marafonda ikinci yerdə gedən idmançını keçdin. İndi neçənci yerdəsən? Qısa cavab ver və səbəbini bir cümlə ilə izah et."
+      }
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "20261105-191104-f7bded",
+      "prompt_id": "explain",
+      "title": "1. Python izahı",
+      "domain": "in-domain",
+      "system": "Sən Azərbaycan dilində Python öyrənən yeni başlayanlara kömək edən müəllimsən. Sadə və dəqiq izah ver, lazım olanda işlək Python kodu göstər.",
+      "user": "Python-da list və tuple arasındakı fərqi yeni başlayan üçün izah et. Qısa kod nümunəsi ver.",
+      "results": {
+        "base": {
+          "variant": "base",
+          "text": "Pythonda `list` və `tuple` əsasında bir çox özü var. Bu özü ilə qısa kod nümunəsi verir:\n\n```python\n# List\nnumbers = [1, 2, 3]\nprint(numbers)  # Output: [1, 2, 3]\n\n# Tuple\ncoordinates = (4, 5)\nprint(coordinates)  # Output: (4, 5)\n\n# İsimlər\nnames = [\"Ali\", \"Veli\"]\nprint(names[0])  # Output: Ali\n\n# Dördün",
+          "elapsed_s": 40.775,
+          "ttft_s": null,
+          "prompt_tokens": 110,
+          "output_tokens": 129,
+          "output_chars": 305,
+          "output_words": 53,
+          "tokens_per_second": 3.164,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        },
+        "finetuned": {
+          "variant": "finetuned",
+          "text": "```python\n# Listaların əsasında:\n# 1. Dəyərlərdən ibarətdir.\n# 2. İndeksli olmayan dəyişikliklər qalır.\n# 3. Ekspektif bir dəyər olmayan dəyişikliklər qalır.\n\n# Tupleların əsasında:\n# 1. Dəyərlərdən ibarətdir.\n# 2. İndeksli olmayan dəyi",
+          "elapsed_s": 42.388,
+          "ttft_s": null,
+          "prompt_tokens": 110,
+          "output_tokens": 128,
+          "output_chars": 236,
+          "output_words": 34,
+          "tokens_per_second": 3.02,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        }
+      }
+    },
+    {
+      "run_id": "20261105-191228-924b85",
+      "prompt_id": "code",
+      "title": "2. Kod yazma",
+      "domain": "in-domain",
+      "system": "Sən Azərbaycan dilində Python öyrənən yeni başlayanlara kömək edən müəllimsən. Sadə və dəqiq izah ver, lazım olanda işlək Python kodu göstər.",
+      "user": "while döngüsü ilə 1-dən 5-ə qədər ədədləri çap edən Python kodu yaz və hər sətri qısa izah et.",
+      "results": {
+        "base": {
+          "variant": "base",
+          "text": "Pythonda while döngüsü, bir daxil edilmiş koşulun doğru olmasından ibarət bir döngü yaratmaq üçün istifadə edilir. Bu döngü, bir daxili koşul sağlayarsa daima döndürür.\n\nİlk dəyərdə, `while` döngüsünü aça bilərsiniz:\n\n```python\n# While döngüsü başlama\ni = 1\n\n# Döngü başlama\nwhile i <= 5:\n    print(i",
+          "elapsed_s": 38.324,
+          "ttft_s": null,
+          "prompt_tokens": 129,
+          "output_tokens": 128,
+          "output_chars": 300,
+          "output_words": 46,
+          "tokens_per_second": 3.34,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        },
+        "finetuned": {
+          "variant": "finetuned",
+          "text": "```python\n# While döngüsü ilə 1-dən 5-ə qədər ədədləri çap edən kod\n\ni = 1 # başlangıç qiyməti\nwhile i <= 5: \n    print(i) # 1-ci qiymət\n    i += 1 # i yi artır\n```\nBu kod, 1-ci qiymətinin 5-ci qiymətden az olmağı üçün `<=` ifadəsi kullanır. `i += 1` if",
+          "elapsed_s": 47.311,
+          "ttft_s": null,
+          "prompt_tokens": 129,
+          "output_tokens": 127,
+          "output_chars": 253,
+          "output_words": 50,
+          "tokens_per_second": 2.684,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        }
+      }
+    },
+    {
+      "run_id": "20261105-191353-2702d4",
+      "prompt_id": "quiz",
+      "title": "3. Quiz yaratma",
+      "domain": "in-domain",
+      "system": "Sən Azərbaycan dilində Python müəllimisən. İstifadəçinin seçdiyi mövzu üzrə 3 qısa suallıq quiz yarat. Cavab açarını sonda ayrıca göstər.",
+      "user": "Python siyahıları mövzusunda 3 suallıq quiz yarat və cavab açarını sonda göstər.",
+      "results": {
+        "base": {
+          "variant": "base",
+          "text": "Tabii, burada sizin istifadəçinin seçdiksiyini göstərmək üçün 3 qısa suallıq quiz yaratmağa çalışacağım:\n\n1. **Quiz 1:**\n   - Soru: \"Python'da bir fonksiyonun ne zaman çağırılır?\"\n     - A) Fonksiyon adı ile çağırılır\n     - B) Fonksiyon adı ve parametrelerle çağırılır\n     - C) Fonksiyon adı ve parametrelerle çağırılır,",
+          "elapsed_s": 37.974,
+          "ttft_s": null,
+          "prompt_tokens": 108,
+          "output_tokens": 128,
+          "output_chars": 322,
+          "output_words": 44,
+          "tokens_per_second": 3.371,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        },
+        "finetuned": {
+          "variant": "finetuned",
+          "text": "1) Python dili nədir? \n   a) Aşağıdakı bütün cümlələri təsir edin.\n      b) Cümlənin başqa bir cümləsi olub-olmadığına görə.\n      c) Cümlənin başqa bir cümləsi olmaz-olub-olmadığına görə.\n      d) Cümlənin başqa bir cümləsi olub-olmadığına görə, bu cümlənin başqa bir cüml",
+          "elapsed_s": 39.515,
+          "ttft_s": null,
+          "prompt_tokens": 108,
+          "output_tokens": 128,
+          "output_chars": 273,
+          "output_words": 36,
+          "tokens_per_second": 3.239,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        }
+      }
+    },
+    {
+      "run_id": "20261105-191511-60286a",
+      "prompt_id": "check",
+      "title": "4. Cavabı yoxlama",
+      "domain": "in-domain",
+      "system": "Sən Azərbaycan dilində Python müəllimisən. Şagirdin cavabını yoxla, düzgün və səhv hissələri qısa izah et. Səhvdirsə doğru cavabı göstər.",
+      "user": "Cavabımı yoxla: `[3, 7, 8][1]` nəticəsi 8-dir. Düzdür?",
+      "results": {
+        "base": {
+          "variant": "base",
+          "text": "Düzdür. `[3, 7, 8][1]` metodun cümlənin əsasında 7-ci elementi döndürür.",
+          "elapsed_s": 17.335,
+          "ttft_s": null,
+          "prompt_tokens": 110,
+          "output_tokens": 40,
+          "output_chars": 72,
+          "output_words": 10,
+          "tokens_per_second": 2.307,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        },
+        "finetuned": {
+          "variant": "finetuned",
+          "text": "Düzdür.",
+          "elapsed_s": 9.369,
+          "ttft_s": null,
+          "prompt_tokens": 110,
+          "output_tokens": 5,
+          "output_chars": 7,
+          "output_words": 1,
+          "tokens_per_second": 0.534,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        }
+      }
+    },
+    {
+      "run_id": "20261105-191537-c47735",
+      "prompt_id": "hard",
+      "title": "5. Çətin / domen xarici",
+      "domain": "out-of-domain",
+      "system": "Sən dəqiq və qısa cavab verən köməkçisən.",
+      "user": "Bir marafonda ikinci yerdə gedən idmançını keçdin. İndi neçənci yerdəsən? Qısa cavab ver və səbəbini bir cümlə ilə izah et.",
+      "results": {
+        "base": {
+          "variant": "base",
+          "text": "İndi üçüncü yerdədəsin. Marafa üçün üçüncü yerdədən geyinmişsin.",
+          "elapsed_s": 15.126,
+          "ttft_s": null,
+          "prompt_tokens": 100,
+          "output_tokens": 30,
+          "output_chars": 64,
+          "output_words": 8,
+          "tokens_per_second": 1.983,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        },
+        "finetuned": {
+          "variant": "finetuned",
+          "text": "İndi üçüncü yerdədəsən. Marafa 3-cü yerdə gedən idmançın keçdi.",
+          "elapsed_s": 15.902,
+          "ttft_s": null,
+          "prompt_tokens": 100,
+          "output_tokens": 34,
+          "output_chars": 63,
+          "output_words": 9,
+          "tokens_per_second": 2.138,
+          "max_new_tokens": 128,
+          "temperature": 0.0,
+          "error": null
+        }
+      }
+    }
+  ]
+}

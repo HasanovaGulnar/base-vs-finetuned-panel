@@ -1,0 +1,8 @@
+# The project .venv inherits the Anaconda scientific stack
+# (created with: python -m venv .venv --system-site-packages).
+torch>=2.4
+transformers>=5.0
+peft>=0.21
+accelerate>=1.0
+streamlit>=1.40
+matplotlib>=3.8

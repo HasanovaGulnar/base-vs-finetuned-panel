@@ -1,0 +1,58 @@
+=== Quiz yaratma ===
+Prompt:
+Quiz yarat: Python siyahıları mövzusunda 3 sual ver və cavab açarını sonda göstər.
+
+Base model:
+Python siyahıları mövzusu üçün 3 sual verir:
+
+1. Python döngüleri:
+   a) for döngüsü
+   b) while döngüsü
+   c) if döngüsü
+
+2. Python fonksiyonlar:
+   a) Defun fonksiyonu
+   b) Lambda fonksiyonu
+   c) Closure fonksiyonu
+
+3. Python modül (module) yüklənməsi:
+   a) Import komutu
+   b) from komutu
+   c) global komutu
+
+Bu sualları səh
+
+Öz QLoRA adapterimiz:
+Python siyahıları mövzusu üçün 3 sual verir:
+
+1) Siyahıda bir daxil olunur qeyriyi qoşur.
+2) Siyahıda bir daxil olunur qeyriyi qoşur.
+3) Siyahıda bir daxil olunur qeyriyi qoşur.
+
+Cavablar:
+1) "Qeyri"
+2) "Qeyri"
+3) "Qeyri"
+
+Bu sualları səbəbli cavablar göstərməyən cavablar göstərir.
+
+=== Cavabı yoxlama ===
+Prompt:
+Cavabımı yoxla: `[3, 7, 8][1]` nəticəsi 8-dir.
+
+Base model:
+Bu kodda `[]` dızısal listaların indexlərini alır. Indexlərinin sırası `{0, 1}` olmalıdır. Bu indexləri almaq üçün `[]` dızısal listada indexlərlər `{0, 1}` olmalıdır.
+
+İndexlərinin sırası:
+
+- `{0}` - dizi elementi 0-dan başlayır.
+- `{1}` - dizi elementi 1-dan başlayır.
+
+Düzgün indexlər:
+
+```python
+# Başlangıç
+my_list = [3,
+
+Öz QLoRA adapterimiz:
+Hesablamalı bir dizi olmayır. `[3, 7, 8][1]` nəticəsi `7`-dir.

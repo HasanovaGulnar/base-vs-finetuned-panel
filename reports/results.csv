@@ -1,0 +1,11 @@
+run_id,prompt_id,prompt_title,domain,variant,elapsed_s,ttft_s,prompt_tokens,output_tokens,output_words,output_chars,tokens_per_second,max_new_tokens,temperature,error
+20261105-191104-f7bded,explain,1. Python izahı,in-domain,base,40.775,,110,129,53,305,3.164,128,0.0,
+20261105-191104-f7bded,explain,1. Python izahı,in-domain,finetuned,42.388,,110,128,34,236,3.02,128,0.0,
+20261105-191228-924b85,code,2. Kod yazma,in-domain,base,38.324,,129,128,46,300,3.34,128,0.0,
+20261105-191228-924b85,code,2. Kod yazma,in-domain,finetuned,47.311,,129,127,50,253,2.684,128,0.0,
+20261105-191353-2702d4,quiz,3. Quiz yaratma,in-domain,base,37.974,,108,128,44,322,3.371,128,0.0,
+20261105-191353-2702d4,quiz,3. Quiz yaratma,in-domain,finetuned,39.515,,108,128,36,273,3.239,128,0.0,
+20261105-191511-60286a,check,4. Cavabı yoxlama,in-domain,base,17.335,,110,40,10,72,2.307,128,0.0,
+20261105-191511-60286a,check,4. Cavabı yoxlama,in-domain,finetuned,9.369,,110,5,1,7,0.534,128,0.0,
+20261105-191537-c47735,hard,5. Çətin / domen xarici,out-of-domain,base,15.126,,100,30,8,64,1.983,128,0.0,
+20261105-191537-c47735,hard,5. Çətin / domen xarici,out-of-domain,finetuned,15.902,,100,34,9,63,2.138,128,0.0,
