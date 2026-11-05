@@ -167,9 +167,11 @@ observed **~5–10% decode overhead**. The 23.4% gap on the `code` prompt is
 larger than the others and is best treated as run-to-run noise plus a different
 number of generated tokens, not as a stable property of the adapter.
 
-The load side is unambiguous: the adapter adds **0.17 s** and **2.09 MB** to a
-base load of about 0.5 s (warm OS cache) and ~10 s (cold cache). Against a 40 s
-generation, the adapter load is noise.
+The load side is unambiguous: the adapter adds **0.17 s** and **2.09 MB** on top
+of a base load that took **0.49 s** with the weights already in the OS file
+cache. Loading the base weights without a warm cache takes far longer than
+0.17 s, so the adapter attach step is a negligible fraction of startup either
+way. Against a 40 s generation, it is noise.
 
 **Conclusion on cost:** the adapter is cheap enough that it should be judged
 only on answer quality. That is the subject of the next section.

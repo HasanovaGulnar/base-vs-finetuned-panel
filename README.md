@@ -92,6 +92,11 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 # 6. verify every deliverable
 .\run.ps1 scripts\04_validate_submission.py
 .\run.ps1 -m unittest discover -s tests -v
+
+# 7. optional: headless end-to-end UI test (loads the model, runs one short
+#    comparison, clicks a vote). Set UI_SMOKE_VOTE=0 to skip casting a vote.
+$env:UI_SMOKE_VOTE = "1"
+.\run.ps1 scripts\05_ui_smoke_test.py
 ```
 
 `run.ps1` sets `KMP_DUPLICATE_LIB_OK=TRUE` (two OpenMP runtimes in this Anaconda
@@ -158,7 +163,8 @@ base-vs-finetuned-panel/
 │  ├─ 01_run_benchmark.py
 │  ├─ 02_merged_benchmark.py
 │  ├─ 03_make_report.py
-│  └─ 04_validate_submission.py
+│  ├─ 04_validate_submission.py
+│  └─ 05_ui_smoke_test.py      # headless Streamlit AppTest (real model)
 ├─ adapters/qwen25-python-tutor/   # the mandatory QLoRA adapter (r=4, alpha=8)
 ├─ data/                           # 72-example Azerbaijani Python-tutor dataset
 ├─ reference/                      # original mandatory app files, for provenance

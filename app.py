@@ -19,7 +19,7 @@ from src.config import (
     VOTES_LOG,
     ensure_directories,
 )
-from src.engine import ComparisonEngine, format_seconds
+from src.engine import ComparisonEngine
 from src.logging_utils import log_run, log_vote, new_run_id, read_jsonl
 from src.prompts import PROMPTS, get_prompt
 
@@ -180,7 +180,7 @@ with st.sidebar:
         max_value=256,
         value=DEFAULT_MAX_NEW_TOKENS,
         step=16,
-        help="CPU-da 1 token ≈ 0.45 saniyə çəkir. 128 token ≈ 60 saniyə.",
+        help="Bu kompüterdə ~3 token/saniyə: 128 token təxminən 40–45 saniyə çəkir.",
     )
     temperature = st.slider(
         "Temperature",
